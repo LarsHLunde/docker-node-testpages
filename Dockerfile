@@ -1,6 +1,7 @@
 FROM debian:12-slim
 RUN mkdir /application
 RUN mkdir /script
+RUN touch /script/firstrun
 RUN apt-get update
 RUN apt-get install -y nodejs npm
 ADD init.sh /script/
