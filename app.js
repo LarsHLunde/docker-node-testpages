@@ -17,7 +17,7 @@ app.get('/', (req, res) => {
   message = message + '<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status">https://developer.mozilla.org/en-US/docs/Web/HTTP/Status</a></p>\n'
   message = message + '<p><a href="' + subpage + '/301">Redirect : code 301</a></p>\n'
   message = message + '<p><a href="' + subpage + '/400">Bad request : code 400</a></p>\n'
-  message = message + '<p><a href="' + subpage + '/401">Unathorized : code 401</a></p>\n'
+  message = message + '<p><a href="' + subpage + '/401">Unauthorized : code 401</a></p>\n'
   message = message + '<p>(username and password to above is example)</p>\n'
   message = message + '<p><a href="' + subpage + '/403">Forbidden : code 403</a></p>\n'
   message = message + '<p><a href="' + subpage + '/404">Not found : code 404</a></p>\n'
