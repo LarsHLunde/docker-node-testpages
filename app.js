@@ -1,8 +1,6 @@
 const express = require('express')
 const basicAuth = require('express-basic-auth')
-
 const app = express()
-basicAuth({users: { 'example': 'example' }, challenge: true, realm: 'example',})
 
 const port = 8080
 
@@ -15,6 +13,7 @@ app.get('/', (req, res) => {
   message = message + "<h3>This is the example page for return code 200</h3>\n"
   message = message + "<p>For the full list, check out the Mozilla Developer Network documentation</p>\n"
   message = message + '<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status">https://developer.mozilla.org/en-US/docs/Web/HTTP/Status</a></p>\n'
+  message = message + '<p><a href="' + subpage + '/202">Accepted : code 202</a></p>\n'
   message = message + '<p><a href="' + subpage + '/301">Redirect : code 301</a></p>\n'
   message = message + '<p><a href="' + subpage + '/400">Bad request : code 400</a></p>\n'
   message = message + '<p><a href="' + subpage + '/401">Unauthorized : code 401</a></p>\n'
@@ -22,6 +21,14 @@ app.get('/', (req, res) => {
   message = message + '<p><a href="' + subpage + '/403">Forbidden : code 403</a></p>\n'
   message = message + '<p><a href="' + subpage + '/404">Not found : code 404</a></p>\n'
   message = message + '<p><a href="' + subpage + '/418">I\'m a teapot : code 418 (easter egg, but valid)</a></p>\n'
+  res.send(preMessage + message + postMessage)
+})
+
+
+app.get('/202', (req, res) => {
+  var message = "<h1>Return code 202</h1>\n"
+  message = message + "<h3>Accepted</h3>\n"
+  res.status(202);
   res.send(preMessage + message + postMessage)
 })
 
