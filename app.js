@@ -20,7 +20,8 @@ app.get('/', (req, res) => {
   message = message + '<p><a href="' + subpage + '/401">Unathorized : code 401</a></p>\n'
   message = message + '<p>(username and password to above is example)</p>\n'
   message = message + '<p><a href="' + subpage + '/403">Forbidden : code 403</a></p>\n'
-  message = message + '<p><a href="' + subpage + '/404">Forbidden : code 404</a></p>\n'
+  message = message + '<p><a href="' + subpage + '/404">Not found : code 404</a></p>\n'
+  message = message + '<p><a href="' + subpage + '/418">I\'m a teapot : code 418 (easter egg, but valid)</a></p>\n'
   res.send(preMessage + message + postMessage)
 })
 
@@ -50,6 +51,13 @@ app.get('/403', (req, res) => {
 app.get('/404', (req, res) => {
   var message = "<h1>Error Code 404</h1>\n"
   message = message + "<h3>Not Found</h3>\n"
+  res.status(404);
+  res.send(preMessage + message + postMessage)
+})
+
+app.get('/418', (req, res) => {
+  var message = "<h1>Error Code 418</h1>\n"
+  message = message + "<h3>I'm a teapot</h3>\n"
   res.status(404);
   res.send(preMessage + message + postMessage)
 })
