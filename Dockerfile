@@ -2,7 +2,7 @@ FROM debian:12-slim
 RUN mkdir /application
 RUN mkdir /script
 RUN apt-get update
-RUN apt-get install -y nodejs
+RUN apt-get install -y nodejs npm
 ADD init.sh /script/
 ADD app.js /application/
 WORKDIR "/application"
