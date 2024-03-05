@@ -58,7 +58,7 @@ app.get('/404', (req, res) => {
 app.get('/418', (req, res) => {
   var message = "<h1>Error Code 418</h1>\n"
   message = message + "<h3>I'm a teapot</h3>\n"
-  res.status(404);
+  res.status(418);
   res.send(preMessage + message + postMessage)
 })
 
