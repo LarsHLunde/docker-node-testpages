@@ -10,6 +10,6 @@ docker run \
   -p 8080:8080 \
   --name testpages \
   --restart unless-stopped \
-  testpages
+  docker-node-testpages
 docker start testpages
 ```
