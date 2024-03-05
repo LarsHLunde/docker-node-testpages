@@ -8,7 +8,7 @@ cd docker-node-testpages
 docker build -t docker-node-testpages .
 docker run -t \
   -p 8080:8080 \
-  --name rutorrent \
+  --name testpages \
   --restart unless-stopped \
   testpages
 docker start testpages
